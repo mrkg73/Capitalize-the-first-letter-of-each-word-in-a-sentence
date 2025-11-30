@@ -8,16 +8,6 @@ public class Main
 
         Scanner newscan = new Scanner(sc.nextLine());
         sc.close();
-        StringBuilder nam2 = new StringBuilder();
-
-
-        while (newscan.hasNext())
-        {
-            String nm= newscan.next();
-         nam2.append(Character.toUpperCase(nm.charAt(0)) +nm.substring(1) + " ");
-
-        }
-        System.out.print(nam2);
-
+        newscan.tokens().map(s-> Character.toUpperCase(s.charAt(0)) + s.substring(1) ).forEach(s->System.out.print(s+" "));
     }
 }
