@@ -5,19 +5,17 @@ public class Main
     {
         Scanner sc = new Scanner(System.in);
         System.out.println("Enter a string: ");
-        String nam=sc.nextLine();
+
+        Scanner newscan = new Scanner(sc.nextLine());
         sc.close();
+        StringBuilder nam2 = new StringBuilder();
 
 
-        int size=nam.length();
-        StringBuilder nam2= new StringBuilder();
-
-
-        for (int i=0; i<size; i+=1)
+        while (newscan.hasNext())
         {
-            if( i==0 &&Character.isLetter(nam.charAt(i)) ) nam2.append(Character.toUpperCase(nam.charAt(i)));
-           else if( !Character.isLetter(nam.charAt(i-1)) )  nam2.append(Character.toUpperCase(nam.charAt(i)));
-            else nam2.append(nam.charAt(i));
+            String nm= newscan.next();
+         nam2.append(Character.toUpperCase(nm.charAt(0)) +nm.substring(1) + " ");
+
         }
         System.out.print(nam2);
 
